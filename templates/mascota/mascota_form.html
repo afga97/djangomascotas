@@ -1,0 +1,54 @@
+{% extends 'base/base.html '%}
+
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  <div class="row">
+      <div class="col-md-6">
+        <label for="">{{datos.nombre.label_tag}}</label>
+        {{datos.nombre}}
+      </div>
+      <div class="col-md-6">
+        <label for="">{{datos.sexo.label_tag}}</label>
+        {{datos.sexo}}
+      </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="">{{datos.edad_aproximada.label_tag}}</label>
+      {{datos.edad_aproximada}}
+    </div>
+    <div class="col-md-6">
+      <label for="">{{datos.fecha_rescate.label_tag}}</label>
+      {{datos.fecha_rescate}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="">{{datos.persona.label_tag}}</label>
+      {{datos.persona}}
+    </div>
+    <div class="col-md-6">
+      <label for="">{{datos.vacuna.label_tag}}</label>
+      {{datos.vacuna}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      {% if edit %}
+      <button type="submit" name="button" class="btn btn-success">Modificar</button>
+      {% else %}
+      <button type="submit" name="button" class="btn btn-success">Guardar</button>
+      {% endif %}
+    </div>
+  </div>
+
+</form>
+{% endblock %}
+
+<!-- {% for obj in datos %}
+  <p>{{obj.label_tag}}</p>
+  <p>{{obj}}</p>
+{% endfor %} -->
