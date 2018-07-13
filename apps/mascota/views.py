@@ -57,5 +57,5 @@ class MascotaList(ListView):
 class MascotaCreate(CreateView):
     model = Mascota
     form_class = MascotaForm
-    template_name = 'mascota/mascota_form.html'
-    # return reverse('mascota_listar')
+    template_name = 'mascota/mascotc.html'
+    success_url = 'mascota:mascota_listar'
